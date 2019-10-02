@@ -49,7 +49,25 @@ add_action( 'add_meta_boxes', 'add_video_fields_meta_box' );
 
 function show_video_meta_box() {
 	global $post;
-		$meta = get_post_meta( $post->ID, 'video_fields', true ); ?>
+		$meta = get_post_meta( $post->ID, 'video_fields', true );
+
+		//get posts with header image selected
+		$args_vh = array(
+			'post_type'  => 'video_post',
+			'meta_key'   => 'video_fields',
+			'meta_query' => array(
+					array(
+							'key'     => 'video_fields',
+							'value'   => '"headerimg";s:1:"1"',
+							'compare' => 'LIKE',
+					),
+			),
+	);
+	$video_highlight = new WP_Query( $args_vh );
+
+		?>
+
+
 
   <input type="hidden" name="video_meta_box_nonce" value="<?php echo wp_create_nonce( basename(__FILE__) ); ?>">
 
@@ -63,36 +81,69 @@ function show_video_meta_box() {
 		</div>
 		<br />
 		<b>Videography Fields</b>
-    <div class="form-group">
-      <label>Vimeo Video Source</label>
-      <input type="text" name="video_fields[source]" id="video_fields[source]" class="regular-text" value="<?php echo $meta['source']; ?>">
-    </div>
+		<table>
+			<tr>
+				<td>Vimeo Video Source</td>
+				<td><input type="text" name="video_fields[source]" id="video_fields[source]" class="regular-text" value="<?php echo $meta['source']; ?>"></td>
+			</tr>
+			<tr>
+				<td>Video Type/Category</td>
+				<td><input type="text" name="video_fields[category]" id="video_fields[category]" class="regular-text" value="<?php echo $meta['category']; ?>"></td>
+			</tr>
+			<tr>
+				<td>Placeholder Image URL</td>
+				<td><input type="text" name="video_fields[placeholder_img]" id="video_fields[placeholder_img]" style="width: 50%;" value="<?php echo $meta['placeholder_img']; ?>" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<?php
+					if (empty($meta['placeholder_img']) ) {
+						?>
+						<p><i>No image selected</i></p>
+						<?php
+					}
+					else {
+						?>
+						<div>
+							<img height="200px" style="padding: 10px;" src="<?php echo $meta['placeholder_img']; ?>">
+						</div>
+						<?php
+					}
+					?>
+				</td>
 
-    <div class="form-group">
-      <label>Video Type/Category</label>
-      <input type="text" name="video_fields[category]" id="video_fields[category]" class="regular-text" value="<?php echo $meta['category']; ?>">
-    </div>
+			</tr>
+			<tr>
+				<td>
+					Header Highlight Video
+					<br><small>If selected this video will be displayed at the top of the profile page</small>
+				</td>
+				<td>
+					<input type="checkbox" name="video_fields[headerimg]" id="video_fields[headerimg]" value="1" <?php checked( $meta['headerimg'], 1 ); ?> />
 
-		<div class="form-group">
-			<label>Placeholder Image URL:</label>
-			<input type="text" name="video_fields[placeholder_img]" id="video_fields[placeholder_img]" style="width: 50%;" value="<?php echo $meta['placeholder_img']; ?>" />
-		</div>
-		<div class="form-group">
-			<?php
-			if (empty($meta['placeholder_img']) ) {
-				?>
-				<p style="margin-left: 110px;"><i>No image selected</i></p>
-				<?php
-			}
-			else {
-				?>
-				<div style="margin-left: 110px;">
-					<img height="200px" style="padding: 10px;" src="<?php echo $meta['placeholder_img']; ?>">
-				</div>
-				<?php
-			}
-			?>
-		</div>
+					<?php
+					//if highlight video already selected show messages
+					if(count($video_highlight) >= 1){ ?>
+						<i>Highlight video(s) are already selected:
+							( <?php
+							if($video_highlight->have_posts()) :
+								while ($video_highlight->have_posts()) : $video_highlight->the_post ();
+								the_title(); ?>; <?php
+								endwhile;
+								wp_reset_postdata();
+							endif;
+							 ?>) </i>
+						<?php
+					}
+					else {
+						?> <i>No highlight video is selected</i> <?php
+					}
+					?>
+
+				</td>
+			</tr>
+		</table>
   </form>
 
     <?php

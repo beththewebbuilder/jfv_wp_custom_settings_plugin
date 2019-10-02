@@ -68,6 +68,12 @@ function jfv_settings_init() {
     'class' => 'jfv_settings_row',
     'jfv_settings_custom_data' => 'custom',
   ]);
+  add_settings_field('jfv_settings_homepage_testimonials', __('Facebook Testimonials URL', 'jfv_settings'), 'jfv_settings_homepage_testimonials', 'jfv_settings', 'jfv_settings_section_developers',
+  [
+    'label_for' => 'jfv_settings_homepage_testimonials',
+    'class' => 'jfv_settings_row',
+    'jfv_settings_custom_data' => 'custom',
+  ]);
 
   //** About fields **//
   add_settings_field('jfv_about_settings_text', __('About me', 'jfv_about_settings'), 'jfv_about_settings_text', 'jfv_about_settings', 'jfv_about_settings_section_developers',
@@ -108,9 +114,9 @@ function jfv_settings_init() {
     'class' => 'jfv_settings_row',
     'jfv_settings_custom_data' => 'custom',
   ]);
-  add_settings_field('jfv_contact_settings_instagram', __('Instagram', 'jfv_contact_settings'), 'jfv_contact_settings_instagram', 'jfv_contact_settings', 'jfv_contact_settings_section_developers',
+  add_settings_field('jfv_contact_settings_facebook_name', __('Facebook name', 'jfv_contact_settings'), 'jfv_contact_settings_facebook_name', 'jfv_contact_settings', 'jfv_contact_settings_section_developers',
   [
-    'label_for' => 'jfv_contact_settings_instagram',
+    'label_for' => 'jfv_contact_settings_facebook_name',
     'class' => 'jfv_settings_row',
     'jfv_settings_custom_data' => 'custom',
   ]);
@@ -235,6 +241,17 @@ function jfv_settings_homepage_subtitle( $args ) {
   <?
 }
 
+//Homepage facebook testimonials
+function jfv_settings_homepage_testimonials( $args ) {
+  $options = get_option( 'jfv_settings_options' ); ?>
+  <input id="<?php echo esc_attr( $args['label_for'] ); ?>"
+  data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
+  name="jfv_settings_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
+  type="text" style="width: 50%;" value="<?php echo $options[ $args['label_for'] ]; ?>" />
+  <?
+}
+
+
 //** About fields **//
 //about text
 function jfv_about_settings_text( $args ) {
@@ -309,7 +326,7 @@ function jfv_contact_settings_facebook( $args ) {
 <?php }
 
 // Instagram
-function jfv_contact_settings_instagram( $args ) {
+function jfv_contact_settings_facebook_name( $args ) {
   $options = get_option( 'jfv_contact_settings_options' ); ?>
   <input id="<?php echo esc_attr( $args['label_for'] ); ?>"
   data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
