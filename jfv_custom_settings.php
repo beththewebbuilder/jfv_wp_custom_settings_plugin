@@ -44,57 +44,9 @@ function jfv_settings_init() {
   //** Homepage fields **//
 
   // register a new field in the "jfv_settings_section_developers" section, inside the "jfv_settings" page
-  add_settings_field('jfv_settings_banner_img', __('Banner img', 'jfv_settings'), 'jfv_settings_banner_img', 'jfv_settings', 'jfv_settings_section_developers',
+  add_settings_field('jfv_settings_banner_img', __('Homepage banner img', 'jfv_settings'), 'jfv_settings_banner_img', 'jfv_settings', 'jfv_settings_section_developers',
   [
     'label_for' => 'jfv_settings_banner_img',
-    'class' => 'jfv_settings_row',
-    'jfv_settings_custom_data' => 'custom',
-  ]);
-  add_settings_field('jfv_settings_banner_alt_text', __('Banner image alt text', 'jfv_settings'), 'jfv_settings_banner_alt_text', 'jfv_settings', 'jfv_settings_section_developers',
-  [
-    'label_for' => 'jfv_settings_banner_alt_text',
-    'class' => 'jfv_settings_row',
-    'jfv_settings_custom_data' => 'custom',
-  ]);
-  add_settings_field('jfv_settings_testimonial_1', __('Testimonial #1', 'jfv_settings'), 'jfv_settings_testimonial_1', 'jfv_settings', 'jfv_settings_section_developers',
-  [
-    'label_for' => 'jfv_settings_testimonial_1',
-    'class' => 'jfv_settings_row',
-    'jfv_settings_custom_data' => 'custom',
-  ]);
-  add_settings_field('jfv_settings_testimonial_2', __('Testimonial #2', 'jfv_settings'), 'jfv_settings_testimonial_2', 'jfv_settings', 'jfv_settings_section_developers',
-  [
-    'label_for' => 'jfv_settings_testimonial_2',
-    'class' => 'jfv_settings_row',
-    'jfv_settings_custom_data' => 'custom',
-  ]);
-  add_settings_field('jfv_settings_testimonial_3', __('Testimonial #3', 'jfv_settings'), 'jfv_settings_testimonial_3', 'jfv_settings', 'jfv_settings_section_developers',
-  [
-    'label_for' => 'jfv_settings_testimonial_3',
-    'class' => 'jfv_settings_row',
-    'jfv_settings_custom_data' => 'custom',
-  ]);
-  add_settings_field('jfv_settings_highlight_vid_1', __('Highlight video #1 ID', 'jfv_settings'), 'jfv_settings_highlight_vid_1', 'jfv_settings', 'jfv_settings_section_developers',
-  [
-    'label_for' => 'jfv_settings_highlight_vid_1',
-    'class' => 'jfv_settings_row',
-    'jfv_settings_custom_data' => 'custom',
-  ]);
-  add_settings_field('jfv_settings_highlight_vid_1_placeholder', __('Highlight video #1 placeholder image', 'jfv_settings'), 'jfv_settings_highlight_vid_1_placeholder', 'jfv_settings', 'jfv_settings_section_developers',
-  [
-    'label_for' => 'jfv_settings_highlight_vid_1_placeholder',
-    'class' => 'jfv_settings_row',
-    'jfv_settings_custom_data' => 'custom',
-  ]);
-  add_settings_field('jfv_settings_highlight_vid_2', __('Highlight video #2 ID', 'jfv_settings'), 'jfv_settings_highlight_vid_2', 'jfv_settings', 'jfv_settings_section_developers',
-  [
-    'label_for' => 'jfv_settings_highlight_vid_2',
-    'class' => 'jfv_settings_row',
-    'jfv_settings_custom_data' => 'custom',
-  ]);
-  add_settings_field('jfv_settings_highlight_vid_2_placeholder', __('Highlight video #2 placeholder image', 'jfv_settings'), 'jfv_settings_highlight_vid_2_placeholder', 'jfv_settings', 'jfv_settings_section_developers',
-  [
-    'label_for' => 'jfv_settings_highlight_vid_2_placeholder',
     'class' => 'jfv_settings_row',
     'jfv_settings_custom_data' => 'custom',
   ]);
@@ -110,33 +62,75 @@ function jfv_settings_init() {
     'class' => 'jfv_settings_row',
     'jfv_settings_custom_data' => 'custom',
   ]);
-  add_settings_field('jfv_settings_homepage_testimonials', __('Facebook Testimonials URL', 'jfv_settings'), 'jfv_settings_homepage_testimonials', 'jfv_settings', 'jfv_settings_section_developers',
+  add_settings_field('jfv_settings_homepage_testimonial1', __('Review 1', 'jfv_settings'), 'jfv_settings_homepage_testimonial1', 'jfv_settings', 'jfv_settings_section_developers',
   [
-    'label_for' => 'jfv_settings_homepage_testimonials',
+    'label_for' => 'jfv_settings_homepage_testimonial1',
+    'class' => 'jfv_settings_row',
+    'jfv_settings_custom_data' => 'custom',
+  ]);
+  add_settings_field('jfv_settings_homepage_testimonial2', __('Review 2', 'jfv_settings'), 'jfv_settings_homepage_testimonial2', 'jfv_settings', 'jfv_settings_section_developers',
+  [
+    'label_for' => 'jfv_settings_homepage_testimonial2',
+    'class' => 'jfv_settings_row',
+    'jfv_settings_custom_data' => 'custom',
+  ]);
+  add_settings_field('jfv_settings_homepage_testimonial3', __('Review 3', 'jfv_settings'), 'jfv_settings_homepage_testimonial3', 'jfv_settings', 'jfv_settings_section_developers',
+  [
+    'label_for' => 'jfv_settings_homepage_testimonial3',
+    'class' => 'jfv_settings_row',
+    'jfv_settings_custom_data' => 'custom',
+  ]);
+  add_settings_field('jfv_settings_video1_placeholder', __('Highlight video 1 placeholder image', 'jfv_settings'), 'jfv_settings_video1_placeholder', 'jfv_settings', 'jfv_settings_section_developers',
+  [
+    'label_for' => 'jfv_settings_video1_placeholder',
+    'class' => 'jfv_settings_row',
+    'jfv_settings_custom_data' => 'custom',
+  ]);
+  add_settings_field('jfv_settings_video1_alttext', __('Highlight video 1 alt text', 'jfv_settings'), 'jfv_settings_video1_alttext', 'jfv_settings', 'jfv_settings_section_developers',
+  [
+    'label_for' => 'jfv_settings_video1_alttext',
+    'class' => 'jfv_settings_row',
+    'jfv_settings_custom_data' => 'custom',
+  ]);
+  add_settings_field('jfv_settings_video1_vimeoid', __('Highlight video 1 vimeo ID', 'jfv_settings'), 'jfv_settings_video1_vimeoid', 'jfv_settings', 'jfv_settings_section_developers',
+  [
+    'label_for' => 'jfv_settings_video1_vimeoid',
+    'class' => 'jfv_settings_row',
+    'jfv_settings_custom_data' => 'custom',
+  ]);
+  add_settings_field('jfv_settings_video2_placeholder', __('Highlight video 2 placeholder image', 'jfv_settings'), 'jfv_settings_video2_placeholder', 'jfv_settings', 'jfv_settings_section_developers',
+  [
+    'label_for' => 'jfv_settings_video2_placeholder',
+    'class' => 'jfv_settings_row',
+    'jfv_settings_custom_data' => 'custom',
+  ]);
+  add_settings_field('jfv_settings_video2_alttext', __('Highlight video 2 alt text', 'jfv_settings'), 'jfv_settings_video2_alttext', 'jfv_settings', 'jfv_settings_section_developers',
+  [
+    'label_for' => 'jfv_settings_video2_alttext',
+    'class' => 'jfv_settings_row',
+    'jfv_settings_custom_data' => 'custom',
+  ]);
+  add_settings_field('jfv_settings_video2_vimeoid', __('Highlight video 2 vimeo ID', 'jfv_settings'), 'jfv_settings_video2_vimeoid', 'jfv_settings', 'jfv_settings_section_developers',
+  [
+    'label_for' => 'jfv_settings_video2_vimeoid',
     'class' => 'jfv_settings_row',
     'jfv_settings_custom_data' => 'custom',
   ]);
 
   //** About fields **//
-  add_settings_field('jfv_about_settings_title', __('About header', 'jfv_about_settings'), 'jfv_about_settings_title', 'jfv_about_settings', 'jfv_about_settings_section_developers',
-  [
-    'label_for' => 'jfv_about_settings_title',
-    'class' => 'jfv_settings_row',
-    'jfv_settings_custom_data' => 'custom',
-  ]);
   add_settings_field('jfv_about_settings_header', __('About header', 'jfv_about_settings'), 'jfv_about_settings_header', 'jfv_about_settings', 'jfv_about_settings_section_developers',
   [
     'label_for' => 'jfv_about_settings_header',
     'class' => 'jfv_settings_row',
     'jfv_settings_custom_data' => 'custom',
   ]);
-  add_settings_field('jfv_about_settings_short_text', __('About short description', 'jfv_about_settings'), 'jfv_about_settings_short_text', 'jfv_about_settings', 'jfv_about_settings_section_developers',
+  add_settings_field('jfv_about_settings_short_text', __('About me (short text)', 'jfv_about_settings'), 'jfv_about_settings_short_text', 'jfv_about_settings', 'jfv_about_settings_section_developers',
   [
     'label_for' => 'jfv_about_settings_short_text',
     'class' => 'jfv_settings_row',
     'jfv_settings_custom_data' => 'custom',
   ]);
-  add_settings_field('jfv_about_settings_detailed_text', __('About detailed description', 'jfv_about_settings'), 'jfv_about_settings_detailed_text', 'jfv_about_settings', 'jfv_about_settings_section_developers',
+  add_settings_field('jfv_about_settings_detailed_text', __('About me (detailed text)', 'jfv_about_settings'), 'jfv_about_settings_detailed_text', 'jfv_about_settings', 'jfv_about_settings_section_developers',
   [
     'label_for' => 'jfv_about_settings_detailed_text',
     'class' => 'jfv_settings_row',
@@ -156,12 +150,6 @@ function jfv_settings_init() {
     'class' => 'jfv_settings_row',
     'jfv_settings_custom_data' => 'custom',
   ]);
-  add_settings_field('jfv_contact_settings_phone_tel', __('Home no.', 'jfv_contact_settings'), 'jfv_contact_settings_phone_tel', 'jfv_contact_settings', 'jfv_contact_settings_section_developers',
-  [
-    'label_for' => 'jfv_contact_settings_phone_tel',
-    'class' => 'jfv_settings_row',
-    'jfv_settings_custom_data' => 'custom',
-  ]);
   add_settings_field('jfv_contact_settings_email', __('Email', 'jfv_contact_settings'), 'jfv_contact_settings_email', 'jfv_contact_settings', 'jfv_contact_settings_section_developers',
   [
     'label_for' => 'jfv_contact_settings_email',
@@ -174,7 +162,7 @@ function jfv_settings_init() {
     'class' => 'jfv_settings_row',
     'jfv_settings_custom_data' => 'custom',
   ]);
-  add_settings_field('jfv_contact_settings_instagram', __('instagram', 'jfv_contact_settings'), 'jfv_contact_settings_instagram', 'jfv_contact_settings', 'jfv_contact_settings_section_developers',
+  add_settings_field('jfv_contact_settings_instagram', __('Instagram', 'jfv_contact_settings'), 'jfv_contact_settings_instagram', 'jfv_contact_settings', 'jfv_contact_settings_section_developers',
   [
     'label_for' => 'jfv_contact_settings_instagram',
     'class' => 'jfv_settings_row',
@@ -186,7 +174,7 @@ function jfv_settings_init() {
     'class' => 'jfv_settings_row',
     'jfv_settings_custom_data' => 'custom',
   ]);
-  add_settings_field('jfv_contact_settings_pinterest', __('Instgram', 'jfv_contact_settings'), 'jfv_contact_settings_pinterest', 'jfv_contact_settings', 'jfv_contact_settings_section_developers',
+  add_settings_field('jfv_contact_settings_pinterest', __('Pinterest', 'jfv_contact_settings'), 'jfv_contact_settings_pinterest', 'jfv_contact_settings', 'jfv_contact_settings_section_developers',
   [
     'label_for' => 'jfv_contact_settings_pinterest',
     'class' => 'jfv_settings_row',
@@ -212,33 +200,9 @@ function jfv_settings_init() {
     'class' => 'jfv_settings_row',
     'jfv_settings_custom_data' => 'custom',
   ]);
-  add_settings_field('jfv_additional_settings_google_recaptcha_site_key', __('Google analytics tag', 'jfv_additional_settings'), 'jfv_additional_settings_google_recaptcha_site_key', 'jfv_additional_settings', 'jfv_additional_settings_section_developers',
+  add_settings_field('jfv_additional_settings_google_analytics_tag', __('Google analytics tag', 'jfv_additional_settings'), 'jfv_additional_settings_google_analytics_tag', 'jfv_additional_settings', 'jfv_additional_settings_section_developers',
   [
-    'label_for' => 'jfv_additional_settings_google_recaptcha_site_key',
-    'class' => 'jfv_settings_row',
-    'jfv_settings_custom_data' => 'custom',
-  ]);
-  add_settings_field('jfv_additional_settings_google_font_1_name', __('Google font 1 name', 'jfv_additional_settings'), 'jfv_additional_settings_google_font_1_name', 'jfv_additional_settings', 'jfv_additional_settings_section_developers',
-  [
-    'label_for' => 'jfv_additional_settings_google_font_1_name',
-    'class' => 'jfv_settings_row',
-    'jfv_settings_custom_data' => 'custom',
-  ]);
-  add_settings_field('jfv_additional_settings_google_font_1', __('Google font 1', 'jfv_additional_settings'), 'jfv_additional_settings_google_font_1', 'jfv_additional_settings', 'jfv_additional_settings_section_developers',
-  [
-    'label_for' => 'jfv_additional_settings_google_font_1',
-    'class' => 'jfv_settings_row',
-    'jfv_settings_custom_data' => 'custom',
-  ]);
-  add_settings_field('jfv_additional_settings_google_font_2_name', __('Google font 2 name', 'jfv_additional_settings'), 'jfv_additional_settings_google_font_2_name', 'jfv_additional_settings', 'jfv_additional_settings_section_developers',
-  [
-    'label_for' => 'jfv_additional_settings_google_font_2_name',
-    'class' => 'jfv_settings_row',
-    'jfv_settings_custom_data' => 'custom',
-  ]);
-  add_settings_field('jfv_additional_settings_google_font_2', __('Google font 2', 'jfv_additional_settings'), 'jfv_additional_settings_google_font_2', 'jfv_additional_settings', 'jfv_additional_settings_section_developers',
-  [
-    'label_for' => 'jfv_additional_settings_google_font_2',
+    'label_for' => 'jfv_additional_settings_google_analytics_tag',
     'class' => 'jfv_settings_row',
     'jfv_settings_custom_data' => 'custom',
   ]);
@@ -249,7 +213,26 @@ add_action( 'admin_init', 'jfv_settings_init' );
 //homepage section settings
 function jfv_settings_section_developers_cb( $args ) {
  ?>
- <p id="<?php echo esc_attr( $args['id'] ); ?>"><?php esc_html_e( 'Set custom settings for the website homepage.', 'jfv_settings' ); ?></p>
+ <p id="<?php echo esc_attr( $args['id'] ); ?>">
+   <?php esc_html_e( 'Set custom settings for the website homepage.', 'jfv_settings' ); ?>
+ </p>
+ <div style="border: 1px solid grey; padding: 10px;">
+   <strong>Getting photos from Pinterest:</strong>
+   <ul>
+     <li>* Find image on Pinterest</li>
+     <li>* Right click and select <b>Open Image in New Tab</b></li>
+     <li>* The URL will look something like this: 'https://i.pinimg.com/564x/4d/8a/f8/4d8af81bde025fc978fb16ef4f1c0ad9.jpg'</li>
+     <li>* You need to replace <b>564x</b> with <b>originals</b>: it will look like this: 'https://i.pinimg.com/<b>originals</b>/4d/8a/f8/4d8af81bde025fc978fb16ef4f1c0ad9.jpg'</li>
+   </ul>
+ </div>
+ <div style="border: 1px solid grey; padding: 10px; margin-top: 20px;">
+   <strong>Getting Vimeo video ID:</strong>
+   <ul>
+     <li>* Find video on Vimeo</li>
+     <li>* The URL will look something like this: 'https://vimeo.com/<b>373896117</b>'</li>
+     <li>* The Id you need is at the end of the URL, in this example: <b>373896117</b></li>
+   </ul>
+ </div>
  <?php
 }
 
@@ -300,130 +283,6 @@ function jfv_settings_banner_img( $args ) {
   }
 }
 
-//banner image alt text
-function jfv_settings_banner_alt_text( $args ) {
-  $options = get_option( 'jfv_settings_options' ); ?>
-  <input id="<?php echo esc_attr( $args['label_for'] ); ?>"
-  data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
-  name="jfv_settings_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
-  type="text" style="width: 50%;" value="<?php echo $options[ $args['label_for'] ]; ?>" />
-
-  <p class="description">
-  <?php esc_html_e( 'Its important to fill this in for SEO - its not visible to users.', 'jfv_settings' ); ?>
-  </p>
-  <?
-}
-
-//testimonial #1
-function jfv_settings_testimonial_1( $args ) {
-  $options = get_option( 'jfv_settings_options' ); ?>
-  <input id="<?php echo esc_attr( $args['label_for'] ); ?>"
-  data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
-  name="jfv_settings_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
-  type="text" style="width: 50%;" value="<?php echo $options[ $args['label_for'] ]; ?>" />
-  <?
-}
-
-//testimonial #2
-function jfv_settings_testimonial_2( $args ) {
-  $options = get_option( 'jfv_settings_options' ); ?>
-  <input id="<?php echo esc_attr( $args['label_for'] ); ?>"
-  data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
-  name="jfv_settings_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
-  type="text" style="width: 50%;" value="<?php echo $options[ $args['label_for'] ]; ?>" />
-  <?
-}
-
-//testimonial #3
-function jfv_settings_testimonial_3( $args ) {
-  $options = get_option( 'jfv_settings_options' ); ?>
-  <input id="<?php echo esc_attr( $args['label_for'] ); ?>"
-  data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
-  name="jfv_settings_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
-  type="text" style="width: 50%;" value="<?php echo $options[ $args['label_for'] ]; ?>" />
-  <?
-}
-
-//highlight video #1
-function jfv_settings_highlight_vid_1( $args ) {
-  $options = get_option( 'jfv_settings_options' ); ?>
-
-  <input id="<?php echo esc_attr( $args['label_for'] ); ?>"
-  data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
-  name="jfv_settings_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
-  type="text" style="width: 50%;" value="<?php echo $options[ $args['label_for'] ]; ?>" />
-
-  <p class="description">
-  <?php esc_html_e( 'Enter the Vimeo ID for the video.', 'jfv_settings' ); ?>
-  </p>
-  <?php
-}
-
-//highlight video #1 placeholder image
-function jfv_settings_highlight_vid_1_placeholder( $args ) {
-  $options = get_option( 'jfv_settings_options' );
-  ?>
-
-  <input
-  id="<?php echo esc_attr( $args['label_for'] ); ?>"
-  data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
-  name="jfv_settings_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
-   type="text" style="width: 50%;" value="<?php echo $options[ $args['label_for'] ]; ?>" />
-  <?php
-  if (empty($options[ $args['label_for']]) ) {
-    ?>
-    <p><i>No image selected</i></p>
-    <?php
-  }
-  else {
-    ?>
-    <div>
-      <img height="200px" style="padding: 10px;" src="<?php echo $options[ $args['label_for'] ]; ?>">
-    </div>
-    <?php
-  }
-}
-
-//highlight video #2
-function jfv_settings_highlight_vid_2( $args ) {
-  $options = get_option( 'jfv_settings_options' ); ?>
-
-  <input id="<?php echo esc_attr( $args['label_for'] ); ?>"
-  data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
-  name="jfv_settings_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
-  type="text" style="width: 50%;" value="<?php echo $options[ $args['label_for'] ]; ?>" />
-
-  <p class="description">
-  <?php esc_html_e( 'Enter the Vimeo ID for the video.', 'jfv_settings' ); ?>
-  </p>
-  <?php
-}
-
-//highlight video #2 placeholder image
-function jfv_settings_highlight_vid_2_placeholder( $args ) {
-  $options = get_option( 'jfv_settings_options' );
-  ?>
-
-  <input
-  id="<?php echo esc_attr( $args['label_for'] ); ?>"
-  data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
-  name="jfv_settings_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
-   type="text" style="width: 50%;" value="<?php echo $options[ $args['label_for'] ]; ?>" />
-  <?php
-  if (empty($options[ $args['label_for']]) ) {
-    ?>
-    <p><i>No image selected</i></p>
-    <?php
-  }
-  else {
-    ?>
-    <div>
-      <img height="200px" style="padding: 10px;" src="<?php echo $options[ $args['label_for'] ]; ?>">
-    </div>
-    <?php
-  }
-}
-
 //Homepage title
 function jfv_settings_homepage_title( $args ) {
   $options = get_option( 'jfv_settings_options' ); ?>
@@ -446,8 +305,8 @@ function jfv_settings_homepage_subtitle( $args ) {
   <?
 }
 
-//Homepage facebook testimonials
-function jfv_settings_homepage_testimonials( $args ) {
+//Testimonial 1
+function jfv_settings_homepage_testimonial1( $args ) {
   $options = get_option( 'jfv_settings_options' ); ?>
   <input id="<?php echo esc_attr( $args['label_for'] ); ?>"
   data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
@@ -456,24 +315,142 @@ function jfv_settings_homepage_testimonials( $args ) {
   <?
 }
 
-
-//** About fields **//
-
-//about title
-function jfv_about_settings_title( $args ) {
-  $options = get_option( 'jfv_about_settings_options' ); ?>
-
+//Testimonial 2
+function jfv_settings_homepage_testimonial2( $args ) {
+  $options = get_option( 'jfv_settings_options' ); ?>
   <input id="<?php echo esc_attr( $args['label_for'] ); ?>"
   data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
-  name="jfv_about_settings_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
+  name="jfv_settings_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
   type="text" style="width: 50%;" value="<?php echo $options[ $args['label_for'] ]; ?>" />
   <?
 }
 
+//Testimonial 3
+function jfv_settings_homepage_testimonial3( $args ) {
+  $options = get_option( 'jfv_settings_options' ); ?>
+  <input id="<?php echo esc_attr( $args['label_for'] ); ?>"
+  data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
+  name="jfv_settings_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
+  type="text" style="width: 50%;" value="<?php echo $options[ $args['label_for'] ]; ?>" />
+  <?
+}
+
+//Video 1 placeholder
+function jfv_settings_video1_placeholder( $args ) {
+  $options = get_option( 'jfv_settings_options' );
+  ?>
+  <p class="description">
+    Remember it's important to replace the <b>'564x'</b> in the Pinterest URL with <b>'originals'</b>
+  </p>
+
+  <input
+  id="<?php echo esc_attr( $args['label_for'] ); ?>"
+  data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
+  name="jfv_settings_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
+   type="text" style="width: 50%;" value="<?php echo $options[ $args['label_for'] ]; ?>" />
+  <?php
+  if (empty($options[ $args['label_for']]) ) {
+    ?>
+    <p><i>No image selected</i></p>
+    <?php
+  }
+  else {
+    ?>
+    <div>
+      <img height="200px" style="padding: 10px;" src="<?php echo $options[ $args['label_for'] ]; ?>">
+    </div>
+    <?php
+  }
+}
+
+//Video 1 alt text
+function jfv_settings_video1_alttext( $args ) {
+  $options = get_option( 'jfv_settings_options' ); ?>
+  <p class="description">
+    This is important for your SEO.  It's used to describe the appearance and function of an image on a page. Keep it relatively short but descriptive. For more information or example alt text click <a href="https://moz.com/learn/seo/alt-text">here</a>
+  </p>
+
+  <input id="<?php echo esc_attr( $args['label_for'] ); ?>"
+  data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
+  name="jfv_settings_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
+  type="text" style="width: 50%;" value="<?php echo $options[ $args['label_for'] ]; ?>" />
+  <?
+}
+
+//Video 1 vimeo ID
+function jfv_settings_video1_vimeoid( $args ) {
+  $options = get_option( 'jfv_settings_options' ); ?>
+  <p class="description">
+    <?php esc_html_e( 'Enter the Vimeo ID for the banner video.', 'jfv_settings' ); ?>
+  </p>
+
+  <input id="<?php echo esc_attr( $args['label_for'] ); ?>"
+  data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
+  name="jfv_settings_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
+  type="text" style="width: 50%;" value="<?php echo $options[ $args['label_for'] ]; ?>" />
+  <?
+}
+
+//Video 2 placeholder
+function jfv_settings_video2_placeholder( $args ) {
+  $options = get_option( 'jfv_settings_options' );
+  ?>
+  <p class="description">
+    Remember it's important to replace the <b>'564x'</b> in the Pinterest URL with <b>'originals'</b>
+  </p>
+
+  <input
+  id="<?php echo esc_attr( $args['label_for'] ); ?>"
+  data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
+  name="jfv_settings_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
+   type="text" style="width: 50%;" value="<?php echo $options[ $args['label_for'] ]; ?>" />
+  <?php
+  if (empty($options[ $args['label_for']]) ) {
+    ?>
+    <p><i>No image selected</i></p>
+    <?php
+  }
+  else {
+    ?>
+    <div>
+      <img height="200px" style="padding: 10px;" src="<?php echo $options[ $args['label_for'] ]; ?>">
+    </div>
+    <?php
+  }
+}
+
+//Video 2 alt text
+function jfv_settings_video2_alttext( $args ) {
+  $options = get_option( 'jfv_settings_options' ); ?>
+  <p class="description">
+    This is important for your SEO.  It's used to describe the appearance and function of an image on a page. Keep it relatively short but descriptive. For more information or example alt text click <a href="https://moz.com/learn/seo/alt-text">here</a>
+  </p>
+
+  <input id="<?php echo esc_attr( $args['label_for'] ); ?>"
+  data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
+  name="jfv_settings_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
+  type="text" style="width: 50%;" value="<?php echo $options[ $args['label_for'] ]; ?>" />
+  <?
+}
+
+//Video 2 vimeo ID
+function jfv_settings_video2_vimeoid( $args ) {
+  $options = get_option( 'jfv_settings_options' ); ?>
+  <p class="description">
+    <?php esc_html_e( 'Enter the Vimeo ID for the banner video.', 'jfv_settings' ); ?>
+  </p>
+
+  <input id="<?php echo esc_attr( $args['label_for'] ); ?>"
+  data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
+  name="jfv_settings_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
+  type="text" style="width: 50%;" value="<?php echo $options[ $args['label_for'] ]; ?>" />
+  <?
+}
+
+//** About fields **//
 //about header
 function jfv_about_settings_header( $args ) {
   $options = get_option( 'jfv_about_settings_options' ); ?>
-
   <input id="<?php echo esc_attr( $args['label_for'] ); ?>"
   data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
   name="jfv_about_settings_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
@@ -484,24 +461,28 @@ function jfv_about_settings_header( $args ) {
 //about short text
 function jfv_about_settings_short_text( $args ) {
   $options = get_option( 'jfv_about_settings_options' ); ?>
+  <p class="description">
+    Short about description for homepage
+  </p>
+
   <textarea id="<?php echo esc_attr( $args['label_for'] ); ?>"
   data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
   name="jfv_about_settings_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
-  type="text" style="width: 50%; height: 200px;">
-    <?php echo $options[ $args['label_for'] ]; ?>
-  </textarea>
+  type="text" style="width: 50%; height: 200px;"><?php echo $options[ $args['label_for'] ]; ?></textarea>
   <?
 }
 
 //about detailed text
 function jfv_about_settings_detailed_text( $args ) {
   $options = get_option( 'jfv_about_settings_options' ); ?>
+  <p class="description">
+    Detailed about description for 'About Me' page
+  </p>
+
   <textarea id="<?php echo esc_attr( $args['label_for'] ); ?>"
   data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
   name="jfv_about_settings_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
-  type="text" style="width: 50%; height: 200px;">
-    <?php echo $options[ $args['label_for'] ]; ?>
-  </textarea>
+  type="text" style="width: 50%; height: 200px;"><?php echo $options[ $args['label_for'] ]; ?></textarea>
   <?
 }
 
@@ -527,18 +508,10 @@ function jfv_about_settings_img( $args ) {
   }
 }
 
+
 //** Contact fields **//
 // Mobile Telephone
 function jfv_contact_settings_phone_mob( $args ) {
-  $options = get_option( 'jfv_contact_settings_options' ); ?>
-  <input id="<?php echo esc_attr( $args['label_for'] ); ?>"
-  data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
-  name="jfv_contact_settings_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
-  type="text" style="width: 50%;" value="<?php echo $options[ $args['label_for'] ]; ?>"/>
-<?php }
-
-// Telephone
-function jfv_contact_settings_phone_tel( $args ) {
   $options = get_option( 'jfv_contact_settings_options' ); ?>
   <input id="<?php echo esc_attr( $args['label_for'] ); ?>"
   data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
@@ -618,39 +591,7 @@ function jfv_additional_settings_google_analytics_src( $args ) {
   type="text" style="width: 50%;" value="<?php echo $options[ $args['label_for'] ]; ?>"/>
 <?php }
 
-function jfv_additional_settings_google_recaptcha_site_key( $args ) {
-  $options = get_option( 'jfv_additional_settings_options' ); ?>
-  <input id="<?php echo esc_attr( $args['label_for'] ); ?>"
-  data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
-  name="jfv_additional_settings_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
-  type="text" style="width: 50%;" value="<?php echo $options[ $args['label_for'] ]; ?>"/>
-<?php }
-
-// Google Fonts
-function jfv_additional_settings_google_font_1( $args ) {
-  $options = get_option( 'jfv_additional_settings_options' ); ?>
-  <input id="<?php echo esc_attr( $args['label_for'] ); ?>"
-  data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
-  name="jfv_additional_settings_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
-  type="text" style="width: 50%;" value="<?php echo $options[ $args['label_for'] ]; ?>"/>
-<?php }
-
-function jfv_additional_settings_google_font_2( $args ) {
-  $options = get_option( 'jfv_additional_settings_options' ); ?>
-  <input id="<?php echo esc_attr( $args['label_for'] ); ?>"
-  data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
-  name="jfv_additional_settings_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
-  type="text" style="width: 50%;" value="<?php echo $options[ $args['label_for'] ]; ?>"/>
-<?php }
-function jfv_additional_settings_google_font_1_name( $args ) {
-  $options = get_option( 'jfv_additional_settings_options' ); ?>
-  <input id="<?php echo esc_attr( $args['label_for'] ); ?>"
-  data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
-  name="jfv_additional_settings_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
-  type="text" style="width: 50%;" value="<?php echo $options[ $args['label_for'] ]; ?>"/>
-<?php }
-
-function jfv_additional_settings_google_font_2_name( $args ) {
+function jfv_additional_settings_google_analytics_tag( $args ) {
   $options = get_option( 'jfv_additional_settings_options' ); ?>
   <input id="<?php echo esc_attr( $args['label_for'] ); ?>"
   data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
@@ -659,7 +600,6 @@ function jfv_additional_settings_google_font_2_name( $args ) {
 <?php }
 
 /**
-
  * top level menu
  */
  function jfv_settings_options_page(){
