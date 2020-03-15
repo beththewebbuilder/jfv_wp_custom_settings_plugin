@@ -194,15 +194,15 @@ function jfv_settings_init() {
     'class' => 'jfv_settings_row',
     'jfv_settings_custom_data' => 'custom',
   ]);
-  add_settings_field('jfv_additional_settings_google_analytics_src', __('Google analytics URL', 'jfv_additional_settings'), 'jfv_additional_settings_google_analytics_src', 'jfv_additional_settings', 'jfv_additional_settings_section_developers',
+  add_settings_field('jfv_additional_settings_google_analytics_tag_id', __('Google analytics tag ID', 'jfv_additional_settings'), 'jfv_additional_settings_google_analytics_tag_id', 'jfv_additional_settings', 'jfv_additional_settings_section_developers',
   [
-    'label_for' => 'jfv_additional_settings_google_analytics_src',
+    'label_for' => 'jfv_additional_settings_google_analytics_tag_id',
     'class' => 'jfv_settings_row',
     'jfv_settings_custom_data' => 'custom',
   ]);
-  add_settings_field('jfv_additional_settings_google_analytics_tag', __('Google analytics tag', 'jfv_additional_settings'), 'jfv_additional_settings_google_analytics_tag', 'jfv_additional_settings', 'jfv_additional_settings_section_developers',
+  add_settings_field('jfv_additional_settings_google_search_console', __('Google search console verification string', 'jfv_additional_settings'), 'jfv_additional_settings_google_search_console', 'jfv_additional_settings', 'jfv_additional_settings_section_developers',
   [
-    'label_for' => 'jfv_additional_settings_google_analytics_tag',
+    'label_for' => 'jfv_additional_settings_google_search_console',
     'class' => 'jfv_settings_row',
     'jfv_settings_custom_data' => 'custom',
   ]);
@@ -583,7 +583,7 @@ function jfv_additional_settings_webauthor_address( $args ) {
 <?php }
 
 // Google Analytics
-function jfv_additional_settings_google_analytics_src( $args ) {
+function jfv_additional_settings_google_analytics_tag_id( $args ) {
   $options = get_option( 'jfv_additional_settings_options' ); ?>
   <input id="<?php echo esc_attr( $args['label_for'] ); ?>"
   data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
@@ -591,7 +591,7 @@ function jfv_additional_settings_google_analytics_src( $args ) {
   type="text" style="width: 50%;" value="<?php echo $options[ $args['label_for'] ]; ?>"/>
 <?php }
 
-function jfv_additional_settings_google_analytics_tag( $args ) {
+function jfv_additional_settings_google_search_console( $args ) {
   $options = get_option( 'jfv_additional_settings_options' ); ?>
   <input id="<?php echo esc_attr( $args['label_for'] ); ?>"
   data-custom="<?php echo esc_attr( $args['jfv_settings_custom_data'] ); ?>"
